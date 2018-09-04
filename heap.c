@@ -4,19 +4,12 @@
 #include <stdbool.h>
 #include "heap.h"
 
-/* Your Heap implementation here */
 
 void swap(Heap* h, int index1, int index2) {
 	Pair x = h->elements[index1];
 	Pair y = h->elements[index2];
 	h->elements[index1] = y;
 	h->elements[index2] = x;
-//	int xkey = h->elements[index1].key;
-//	char* xval = h->elements[index1].value;
-//	h->elements[index1].key = h->elements[index2].key;
-//	h->elements[index1].value = h->elements[index2].value;
-//	h->elements[index2].key = xkey;
-//	h->elements[index2].value = xval;
 }
 
 void expandCapacity(Heap* h) {
@@ -58,14 +51,6 @@ void add(Heap* h, int k, char* val) {
 }
 
 void bubbleDown(Heap* h, int index) {
-//Given index at which to switch
-//Put last index at first index
-//Set last index to null
-//Compare both children
-//Switch top with lesser child
-//Keep comparing children until there are none left, or empty space or 
-//	until less than child
-//
 
 	h->elements[0] = h->elements[index];
 	h->size -= 1;
@@ -129,9 +114,6 @@ char* removeMin(Heap* h) {
 	return toReturn;
 }
 
-//bool isHeapAt(Heap* h, int index) {
-//	return false;
-//}
 
 void cleanupHeap(Heap* h) {
 	free(h->elements);
